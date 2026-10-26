@@ -1,0 +1,31 @@
+services:
+  - type: web
+    name: gamer-bazaar-api
+    env: node
+    plan: starter
+    region: oregon
+    rootDir: server
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 8080
+      - key: DATABASE_URL
+        fromDatabase:
+          name: gamer-bazaar-db
+          property: connectionString
+      - key: ADMIN_SETUP_KEY
+        generateValue: true
+      - key: JWT_SECRET
+        generateValue: true
+      - key: UPI_MERCHANT_VPA
+        value: gamerbazaar.escrow@icici
+
+databases:
+  - name: gamer-bazaar-db
+    plan: starter
+    region: oregon
+    databaseName: gamerbazaar
+    user: gamerbazaar_user

@@ -1,0 +1,6 @@
+{
+  "name": "GAMER BAZAAR",
+  "description": "Global gaming marketplace to buy and sell verified gaming accounts with 350+ game catalog, multi-currency support, seller vault, and instant delivery.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
